@@ -1,5 +1,5 @@
 {
-  "_format": "hh-zksolc-artifact-1",
+  "_format": "hh-sol-artifact-1",
   "contractName": "INonfungiblePositionManager",
   "sourceName": "contracts/interfaces/INonfungiblePositionManager.sol",
   "abi": [
@@ -994,6 +994,5 @@
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "linkReferences": {},
-  "deployedLinkReferences": {},
-  "factoryDeps": {}
+  "deployedLinkReferences": {}
 }
