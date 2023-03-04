@@ -19,23 +19,25 @@ module.exports = async function main(hre) {
     const wallet = new Wallet(`${PrivateKey}`);
     const deployer = new Deployer(hre, wallet);
 
-    let ad1 = ethers.utils.getAddress('0x1a257e9D863afF27B2F2EC5D15F1f88293ad66F1')
-    let ad2 = ethers.utils.getAddress('0x3707761228EE69eFF7138BdA9018eE73A60acE9A')
-    let ad3 = ethers.utils.getAddress('0x757cad74df39e67e5a775D5e21913531eF9f8eB7')
-    let ad4 = ethers.utils.getAddress('0x2da3A1FE894D4f9966C50921a04A72e37869758A')
+    let ad1 = ethers.utils.getAddress('0xee3FeB853C2f3AD868a68261f916eA55B26A2729')
+    let ad2 = ethers.utils.getAddress('0x55CEB8373836b7b8B51933b57329c5C3a67d8408')
+    let ad3 = ethers.utils.getAddress('0x0b93121DF6c8c90105AfBFf9d37e80410901984c')
+    
     // const _nativeCurrencyLabelBytes = formatBytes32String("ETH");
 
     // let NonfungibleTokenPositionDescriptor = new ContractFactory(artifacts.NonfungibleTokenPositionDescriptor_zk.abi, artifacts.NonfungibleTokenPositionDescriptor_zk.bytecode, deployer.zkWallet);
     // let nonfungibleTokenPositionDescriptor = await NonfungibleTokenPositionDescriptor.deploy(ad2, _nativeCurrencyLabelBytes);
-    let NonfungiblePositionManager = new ContractFactory(artifacts.NonfungiblePositionManager_zk.abi, artifacts.NonfungiblePositionManager_zk.bytecode, deployer.zkWallet);
+    //let NonfungiblePositionManager = new ContractFactory(artifacts.NonfungiblePositionManager_zk.abi, artifacts.NonfungiblePositionManager_zk.bytecode, deployer.zkWallet);
     console.log('----------------------------------------------');
     
-    let nonfungiblePositionManager = await NonfungiblePositionManager.deploy(ad1, ad2, ad4 )
+    let deployContract = await deployer.loadArtifact("NonfungiblePositionManager");
+    let contract2 = await deployer.deploy(deployContract, [ad1, ad2, ad3]);
     // console.log('nonfungiblePositionManager',nonfungiblePositionManager);
 
-    console.log('Address ----' ,nonfungiblePositionManager.address);
+    console.log('Address ----' ,(await contract2).address);
     console.log('----------------------------------------------');
 
 }
+
 
 
