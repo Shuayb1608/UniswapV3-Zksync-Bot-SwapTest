@@ -54,8 +54,8 @@ module.exports = async function (hre) {
     console.log('------------------------- Done -------------------------');
 
 
-    let NonfungiblePositionManager = new ContractFactory(artifacts.NonfungiblePositionManager_zk.abi, artifacts.NonfungiblePositionManager_zk.bytecode, deployer.zkWallet);
-    let nonfungiblePositionManager = await NonfungiblePositionManager.deploy(factory.address, weth.address, nonfungibleTokenPositionDescriptor.address);
+    //let NonfungiblePositionManager = new ContractFactory(artifacts.NonfungiblePositionManager_zk.abi, artifacts.NonfungiblePositionManager_zk.bytecode, deployer.zkWallet);
+    //let nonfungiblePositionManager = await NonfungiblePositionManager.deploy(factory.address, weth.address, nonfungibleTokenPositionDescriptor.address);
 
     // const contractAddress = greeterContract.address;
     // console.log(`${artifact.contractName} was deployed to ${contractAddress}`);
@@ -74,7 +74,7 @@ module.exports = async function (hre) {
     console.log('let SWAP_ROUTER_ADDRESS=', `'${swapRouter.address}'`)
     console.log('let NFT_DESCRIPTOR_ADDRESS=', `'${nftDescriptor.address}'`)
     console.log('let POSITION_DESCRIPTOR_ADDRESS=', `'${nonfungibleTokenPositionDescriptor.address}'`)
-    console.log('let POSITION_MANAGER_ADDRESS=', `'${nonfungiblePositionManager.address}'`)
+    //console.log('let POSITION_MANAGER_ADDRESS=', `'${nonfungiblePositionManager.address}'`)
     console.log('let Quarter_Address=', `'${quarter.address}'`);
     console.log('let QUOTER_V2_ADDRESS=', `'${quarterV2.address}'`);
     console.log('let TOKEN_CHECKER = ', `'${tokencheck.address}'`);
